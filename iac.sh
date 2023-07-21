@@ -16,7 +16,9 @@ deb http://ftp.debian.org/debian bookworm-backports main" > $source
 function app_check_inst(){
 	for list in `cat /IaC/applist`; do
 		for i in $( apt list | grep -w $list | awk '{print $1}'  ); do
-			if [[ -z $i ]]; then apt -y install $i
+			if [[ -z $i ]]; then
+			 	apt update
+				apt -y install $i
 				else echo -e "Программа $i установлена"
 			fi
 	done 2>/dev/null
