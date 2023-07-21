@@ -11,5 +11,4 @@ g++
 gcc
 nano
 curl
-wget
 strace
