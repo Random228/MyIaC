@@ -25,7 +25,7 @@ done 2>/dev/null
 
 #Создание пользователя для ssh соединений и настройка sshd
 function add_user_and_sshd_conf(){
-	echo Введите пароль для нового пользователя sshuuser
+	echo Введите пароль для нового пользователя sshuser
 	read usr_pass
 	useradd -m -p $usr_pass -s /bin/bash sshuser
 	if [[ -f /etc/ssh/sshd_config ]]; then
